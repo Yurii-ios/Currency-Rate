@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Currency Rate-->
+        <!--Currency Rates-->
         <scene sceneID="0IT-49-Jw5">
             <objects>
                 <tableViewController id="OfV-fi-kDx" customClass="ExchangeTableViewController" customModule="Currency_Rate" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,7 +71,7 @@
                             <outlet property="delegate" destination="OfV-fi-kDx" id="7Ni-tk-wyJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Currency Rate" id="nkt-qH-guj"/>
+                    <navigationItem key="navigationItem" title="Currency Rates" id="nkt-qH-guj"/>
                     <connections>
                         <segue destination="WWb-nc-RHP" kind="showDetail" identifier="exchangeDetailSegue" id="02j-iG-wFf"/>
                     </connections>
