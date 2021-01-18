@@ -29,7 +29,7 @@ class ExchangeTableViewController: UITableViewController {
         NetworkDataFetcher().fetch(urlString: NetworkConstant.url) { (rates) in
             if let rates = rates {
                 self.exchangeViewCellViewModel = ExchangeViewCellViewModel(rates: rates)
-                
+            
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
