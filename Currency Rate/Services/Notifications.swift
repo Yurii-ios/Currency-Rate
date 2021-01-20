@@ -14,7 +14,7 @@ class Notifications: UIResponder {
     
     func requestAutorization() -> Bool {
         notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            
+            self.notificationCenter.delegate = self
         }
         return true
     }
@@ -22,12 +22,12 @@ class Notifications: UIResponder {
     func scheduleNotification(notification: String) {
         let content = UNMutableNotificationContent()
         let userAcrion = "User Action"
-        notificationCenter.delegate = self
         content.title = notification
         content.body = "The current value of the exchange rate has changed"
         content.sound = UNNotificationSound.default
         content.badge = 1
         content.categoryIdentifier = userAcrion
+        content.threadIdentifier = notification
         
         guard let path = Bundle.main.path(forResource: "rate", ofType: "jpg") else { return }
         
@@ -43,9 +43,9 @@ class Notifications: UIResponder {
             fatalError(error.localizedDescription)
         }
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 6, repeats: false)
         
-        let identifire = "Local Notification"
+        let identifire = UUID().uuidString
         
         let request = UNNotificationRequest (identifier: identifire, content: content, trigger: trigger)
         
