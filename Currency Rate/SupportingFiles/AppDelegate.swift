@@ -11,12 +11,9 @@ import BackgroundTasks
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    private var notification = Notifications()
-    
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-          notification.requestAutorization()
+
         return true
     }
     
