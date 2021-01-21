@@ -13,7 +13,10 @@ import BackgroundTasks
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: BackgroundScheduler.shared.backgroundAppRefreshTaskSchedulerIdentifier, using: nil) { task in
+            
+            BackgroundScheduler.shared.handleAppRefresh(task: task as! BGAppRefreshTask)
+        }
         return true
     }
 

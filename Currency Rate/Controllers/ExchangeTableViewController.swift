@@ -65,7 +65,7 @@ extension ExchangeTableViewController {
         guard let viewModel = exchangeViewCellViewModel else { return }
         
         viewModel.selectRow(atIndexPath: indexPath)
-        
+        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: AppConstants.exchangeDetailSegue, sender: nil)
     }
     
