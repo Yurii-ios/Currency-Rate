@@ -12,7 +12,7 @@ class ExchangeTableViewController: UITableViewController {
     private var exchangeViewCellViewModel: ExchangeViewCellViewModel?
     
     var notification = Notifications()
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -29,7 +29,7 @@ class ExchangeTableViewController: UITableViewController {
         NetworkDataFetcher().fetch(urlString: NetworkConstant.url) { (rates) in
             if let rates = rates {
                 self.exchangeViewCellViewModel = ExchangeViewCellViewModel(rates: rates)
-            
+                
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -50,7 +50,7 @@ extension ExchangeTableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AppConstants.cellIdentifier, for: indexPath) as? ExchangeTableViewCell, let viewModel = exchangeViewCellViewModel else {
             fatalError("ExchangeTableViewCell not found")
         }
-       
+        
         let rateVM = viewModel.rateAtIndex(indexPath.row)
         // add flags to currency
         let countryFlags = AppConstants.flags[indexPath.row]
@@ -66,6 +66,7 @@ extension ExchangeTableViewController {
         
         viewModel.selectRow(atIndexPath: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
+        
         performSegue(withIdentifier: AppConstants.exchangeDetailSegue, sender: nil)
     }
     
@@ -76,10 +77,7 @@ extension ExchangeTableViewController {
         if indentifier == AppConstants.exchangeDetailSegue {
             if let destinationVC = segue.destination as? ExchangeDetailVC { //ExchangeDetailViewController {
                 destinationVC.exchangeDetailViewModel = viewModel.viewModelForSelectedRow()
-               // destinationVC.label.text = "hbbhn"
-                
             }
         }
     }
-    
 }

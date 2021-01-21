@@ -30,6 +30,8 @@ class BackgroundScheduler {
     func handleAppRefresh(task: BGAppRefreshTask) {
         
         scheduleAppRefresh()
+        
+        print(task)
     
     }
 }
