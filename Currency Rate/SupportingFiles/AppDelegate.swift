@@ -16,12 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-    
-    func application(_ application: UIApplication,
-                     performFetchWithCompletionHandler completionHandler:
-                     @escaping (UIBackgroundFetchResult) -> Void) {
-    }
-    
+
     // MARK: UISceneSession Lifecycle
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -36,4 +31,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
+
 

@@ -26,18 +26,25 @@ class ExchangeDetailVC: UIViewController {
         self.lastCurrencyLabel.text = dataStore.getStringFromCache()
     }
     
-    func showAlert() {
-        let alert = UIAlertController(title: "Success", message: "This currency rate has been saved, when it changes, you will receive a notification", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     @IBAction func saveValueButton(_ sender: UIButton) {
         showAlert()
         guard let viewModel = exchangeDetailViewModel else { return }
-        // save lastCurrency
         dataStore.saveStringInCache(name: viewModel.currencyDetail)
-        dataStore.saveDoubleInCache(name: viewModel.currencyRate)
-        print(viewModel.currencyRate)
+        
+        delay(delay: 1) { [weak self] in
+            self?.lastCurrencyLabel.text = self?.dataStore.getStringFromCache()
+        }
     }
+    
+    private func delay(delay: Double, closure: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            closure()
+        }
+    }
+    
+    private func showAlert() {
+         let alert = UIAlertController(title: "Success", message: "This currency rate has been saved, when it changes, you will receive a notification", preferredStyle: .alert)
+         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+         self.present(alert, animated: true, completion: nil)
+     }
 }

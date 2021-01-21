@@ -4,7 +4,8 @@
 <dict>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
-		<string>http://api.nbp.pl/api/exchangerates/tables/a/?format=json</string>
+		<string>http://api.nbp.pl/api/exchangerates/tables/a/?format=jsonBackgroundAppRefreshIdentifier</string>
+		<string>http://api.nbp.pl/api/exchangerates/tables/a/?format=jsonBackgroundProcessingIdentifier</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
