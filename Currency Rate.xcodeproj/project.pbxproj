@@ -26,6 +26,7 @@
 		F12A9BA625B52918001EC3D7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12A9BA525B52918001EC3D7 /* Notifications.swift */; };
 		F12A9BA925B52C4D001EC3D7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12A9BA825B52C4D001EC3D7 /* DataStore.swift */; };
 		F12A9BB425B56CE6001EC3D7 /* rate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F12A9BB325B56CE6001EC3D7 /* rate.jpg */; };
+		F1CF032025B9B4E3006891BF /* BackgroundScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF031F25B9B4E3006891BF /* BackgroundScheduler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		F12A9BA525B52918001EC3D7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		F12A9BA825B52C4D001EC3D7 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		F12A9BB325B56CE6001EC3D7 /* rate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rate.jpg; sourceTree = "<group>"; };
+		F1CF031F25B9B4E3006891BF /* BackgroundScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundScheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			children = (
 				F12A9B5925B4EAAB001EC3D7 /* AppDelegate.swift */,
 				F12A9B5B25B4EAAB001EC3D7 /* SceneDelegate.swift */,
+				F1CF031F25B9B4E3006891BF /* BackgroundScheduler.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				F12A9B9125B4ECAD001EC3D7 /* NetworkDataFetcher.swift in Sources */,
 				F12A9B8D25B4EC91001EC3D7 /* NetworkService.swift in Sources */,
 				F12A9B8825B4EC5C001EC3D7 /* ExchangeModel.swift in Sources */,
+				F1CF032025B9B4E3006891BF /* BackgroundScheduler.swift in Sources */,
 				F12A9BA925B52C4D001EC3D7 /* DataStore.swift in Sources */,
 				F12A9B7C25B4EBA2001EC3D7 /* ExchangeTableViewController.swift in Sources */,
 				F12A9B9C25B4F49D001EC3D7 /* ExchangeDetailVC.swift in Sources */,

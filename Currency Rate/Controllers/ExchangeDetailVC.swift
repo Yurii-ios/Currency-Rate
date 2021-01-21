@@ -30,16 +30,7 @@ class ExchangeDetailVC: UIViewController {
         showAlert()
         guard let viewModel = exchangeDetailViewModel else { return }
         dataStore.saveStringInCache(name: viewModel.currencyDetail)
-        
-        delay(delay: 1) { [weak self] in
-            self?.lastCurrencyLabel.text = self?.dataStore.getStringFromCache()
-        }
-    }
-    
-    private func delay(delay: Double, closure: @escaping () -> ()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-            closure()
-        }
+        lastCurrencyLabel.text = dataStore.getStringFromCache()
     }
     
     private func showAlert() {
