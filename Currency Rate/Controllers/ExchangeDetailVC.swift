@@ -28,9 +28,13 @@ class ExchangeDetailVC: UIViewController {
     
     @IBAction func saveValueButton(_ sender: UIButton) {
         showAlert()
+        loadDataFromDataStore()
+        lastCurrencyLabel.text = dataStore.getStringFromCache()
+    }
+    
+    private func loadDataFromDataStore() {
         guard let viewModel = exchangeDetailViewModel else { return }
         dataStore.saveStringInCache(name: viewModel.currencyDetail)
-        lastCurrencyLabel.text = dataStore.getStringFromCache()
     }
     
     private func showAlert() {
