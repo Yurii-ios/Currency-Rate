@@ -12,8 +12,12 @@ struct AppConstants {
     // add flags to currencies code
     static let flags = ["🇹🇭 1 ", "🇺🇸 1 ", "🇦🇺 1 ", "🇭🇰 1 ", "🇨🇦 1 ", "🇳🇿 1 ", "🇸🇬 1 ", "🇪🇺 1 ", "🇭🇺 1 ", "🇨🇭 1 ", "🇬🇧 1 ", "🇺🇦 1 ", "🇯🇵 1 ", "🇨🇿 1 ", "🇩🇰 1 ", "🇮🇸 1 ", "🇳🇴 1 ", "🇸🇪 1 ", "🇭🇷 1 ", "🇷🇴 1 ", "🇧🇬 1 ", "🇹🇷 1 ", "🇮🇱 1 ", "🇨🇱 1 ", "🇵🇭 1 ", "🇲🇽 1 ", "🇿🇦 1 ", "🇧🇷 1 ", "🇲🇾 1 ",  "🇷🇺 1 ", "🇮🇩 1 ", "🇮🇳 1 ", "🇰🇷 1 ", "🇨🇳 1 ", "🇵🇱 1 "]
    
+    // register cell
     static let cellIdentifier = "cell"
+    // register segue
     static let exchangeDetailSegue = "exchangeDetailSegue"
+    // backgroud scheduler interval
+    static let refreshInterval: Double = 1 * 60
 }
 
 struct NetworkConstant {

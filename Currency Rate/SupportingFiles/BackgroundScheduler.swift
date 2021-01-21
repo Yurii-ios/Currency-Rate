@@ -9,7 +9,28 @@ import Foundation
 import BackgroundTasks
 
 class BackgroundScheduler {
-    let backgroundAppRefreshTaskSchedulerIdentifier = "http://api.nbp.pl/api/exchangerates/tables/a/?format=jsonBackgroundAppRefreshIdentifier"
-    let backgroundProcessingTaskSchedulerIdentifier = "http://api.nbp.pl/api/exchangerates/tables/a/?format=jsonBackgroundProcessingIdentifier"
+    let backgroundAppRefreshTaskSchedulerIdentifier = "api.nbp.pl.BackgroundAppRefreshIdentifier"
+    let backgroundProcessingTaskSchedulerIdentifier = "api.nbp.pl.BackgroundProcessingIdentifier"
+    
+    static let shared = BackgroundScheduler()
+    
+    func scheduleAppRefresh() {
+        
+        let request = BGAppRefreshTaskRequest(identifier: backgroundAppRefreshTaskSchedulerIdentifier)
+        request.earliestBeginDate = Date(timeIntervalSinceNow: AppConstants.refreshInterval)
+
+        do {
+            try BGTaskScheduler.shared.submit(request)
+       
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func handleAppRefresh(task: BGAppRefreshTask) {
+        
+        scheduleAppRefresh()
+    
+    }
 }
 
